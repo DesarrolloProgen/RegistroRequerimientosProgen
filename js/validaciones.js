@@ -143,42 +143,12 @@ function validaciones() {
   }
   else {
     if (c_requerimiento.value == "Reclamo - Producto No Conforme") {
-
-      /*Equipos del reclamo */
-
-      if (equipos.value == "Selecciona una opción" || equipos.value == null) {
-        document.getElementById("headermensaje").style.background = '#ff3c37';
-        document.getElementById('titulomensaje').innerHTML = 'ERROR';
-        document.getElementById('mensaje').innerHTML = 'Seleccione un Equipo';
-        $(".custom-file-label").addClass("selected").html("Choose File");
-        return false;
-      }
-      if (equipos.value != "Accesorios" && equipos.value != "Repuestos") {
-
-        /* Serial del equipo */
-        if (serial.value == "" || serial.value == null) {
-          document.getElementById("headermensaje").style.background = '#ff3c37';
-          document.getElementById('titulomensaje').innerHTML = 'ERROR';
-          document.getElementById('mensaje').innerHTML = 'Escriba un serial';
-          $(".custom-file-label").addClass("selected").html("Choose File");
-          return false;
-        }
-      }
-
-      /*Fecha de Compra del equipo */
-
-      if (fecha_compra.value == "" || fecha_compra.value == null) {
-        document.getElementById("headermensaje").style.background = '#ff3c37';
-        document.getElementById('titulomensaje').innerHTML = 'ERROR';
-        document.getElementById('mensaje').innerHTML = 'seleccione una fecha de compra    ';
-        $(".custom-file-label").addClass("selected").html("Choose File");
-        return false;
-      }
-
-      /* Archivos */
-
       if (file.value == null || file.value == "") {
-        archivo = ""
+        document.getElementById("headermensaje").style.background = '#ff3c37';
+        document.getElementById('titulomensaje').innerHTML = 'ERROR';
+        document.getElementById('mensaje').innerHTML = 'Por favor Seleccione un archivo de evidencia';
+        $(".custom-file-label").addClass("selected").html("Choose File");
+        return false;
       }
     }
   }

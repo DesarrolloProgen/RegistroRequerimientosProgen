@@ -29,15 +29,15 @@ window.addEventListener('load', function () {
               municipio: municipio.value,
               direccion: direccion.value,
               c_requerimiento: c_requerimiento.value,
-              equipos: equipos.value,
-              serial: serial.value,
+              equipos: "",
+              serial: "",
               detalle: detalle_requerimiento.value,
               tipo_cliente: tipo_cliente.value,
-              fecha_compra: fecha_compra.value,
+              fecha_compra: "",
               telefono: telefono.value,
               politica: politica.checked,
               archivo: archivo,
-              archivoFactura: archivoFactura,
+              archivoFactura: "",
               linea: division_comercial.value
             }
           }else{
