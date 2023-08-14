@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
           event.preventDefault();
           console.log(validaciones());
           if (!validaciones()) return false;
-          if(c_requerimiento.value == "Reclamo - Producto No Conforme"){
+          if(c_requerimiento.value == "Reclamo / Producto No Conforme"){
             data = {
               fecha: fechayHora,
               nombre: nombre.value,
@@ -38,6 +38,7 @@ window.addEventListener('load', function () {
               politica: politica.checked,
               archivo: archivo,
               archivoFactura: "",
+              punto_venta: "",
               linea: division_comercial.value
             }
           }else{
@@ -59,6 +60,7 @@ window.addEventListener('load', function () {
               tipo_cliente: tipo_cliente.value,
               politica: politica.checked,
               archivo: "",
+              punto_venta: "",
               archivoFactura: "",
               linea: division_comercial.value,
             }

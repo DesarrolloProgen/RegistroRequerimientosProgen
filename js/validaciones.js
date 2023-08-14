@@ -142,7 +142,7 @@ function validaciones() {
     return false;
   }
   else {
-    if (c_requerimiento.value == "Reclamo - Producto No Conforme") {
+    if (c_requerimiento.value == "Reclamo / Producto No Conforme") {
       if (file.value == null || file.value == "") {
         document.getElementById("headermensaje").style.background = '#ff3c37';
         document.getElementById('titulomensaje').innerHTML = 'ERROR';
@@ -173,13 +173,30 @@ function validaciones() {
 
 function ticketOnchange(sel) {
   divGarantia = document.getElementById("seccion_garantia");
-  if (sel.value == "Reclamo - Producto No Conforme") {
+  let info = "<span>" + sel.value + ": </span>"
+  descripcionCategoria = {
+    Petición:
+      "La petición es una solicitud para que se realicen algún tipo de acción o simplemente solicitar cierta información.",
+    Queja:
+      "Es la inconformidad sobre algún proceso administrativo o comercial, área de la organización o persona.",
+    Reclamo:
+      "Inconformidad ocasionado por fallas en el Producto o la mala prestación de un servicio.",
+    Solicitud:
+      "Propuesta o recomendación del cliente para mejorar el servicio o producto.",
+    Felicitación:
+      "Comunicación positiva frente a los productos y/o servicios ofrecidos, también por la atención brindada por un colaborador.",
+  };
+  if (sel.value == "Reclamo / Producto No Conforme") {
     divGarantia.style.display = "";
-  }
-  else {
+    info += descripcionCategoria['Reclamo'];
+    document.getElementById("helpCategoria").innerHTML = info
+    
+  } else {
     divGarantia.style.display = "none";
+    info += descripcionCategoria[sel.value];
+    document.getElementById("helpCategoria").innerHTML = info;
   }
-
+  document.getElementsByClassName("helpCategoria")[0].style.display = "";
 }
 
 function equipoOnchange(seleccion) {
