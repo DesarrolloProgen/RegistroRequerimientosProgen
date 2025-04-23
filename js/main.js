@@ -39,7 +39,8 @@ window.addEventListener('load', function () {
               archivo: archivo,
               archivoFactura: "",
               punto_venta: "",
-              linea: division_comercial.value
+              linea: division_comercial.value,
+              linea_comercial : ""
             }
           }else{
             data = {
@@ -63,6 +64,7 @@ window.addEventListener('load', function () {
               punto_venta: "",
               archivoFactura: "",
               linea: division_comercial.value,
+              linea_comercial : ""
             }
           }
         
