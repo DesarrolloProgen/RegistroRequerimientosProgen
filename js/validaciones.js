@@ -186,7 +186,7 @@ function ticketOnchange(sel) {
     Felicitación:
       "Comunicación positiva frente a los productos y/o servicios ofrecidos, también por la atención brindada por un colaborador.",
   };
-  if (sel.value == "Reclamo / Producto No Conforme") {
+  if (sel.value == "Reclamo / Producto No Conforme" || sel.value == "Queja") {
     divGarantia.style.display = "";
     info += descripcionCategoria['Reclamo'];
     document.getElementById("helpCategoria").innerHTML = info

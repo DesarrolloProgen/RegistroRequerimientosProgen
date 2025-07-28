@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
           event.preventDefault();
           console.log(validaciones());
           if (!validaciones()) return false;
-          if(c_requerimiento.value == "Reclamo / Producto No Conforme"){
+          if(c_requerimiento.value == "Reclamo / Producto No Conforme" || c_requerimiento.value == "Queja"){
             data = {
               fecha: fechayHora,
               nombre: nombre.value,
