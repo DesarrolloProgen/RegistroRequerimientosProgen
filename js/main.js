@@ -88,7 +88,7 @@ window.addEventListener("load", function () {
     };
     console.log(data);
     cargando();
-    // enviarPeticion(settings);
+    enviarPeticion(settings);
   });
 
   /*-------------------------------------------------------------------------------------------- */
