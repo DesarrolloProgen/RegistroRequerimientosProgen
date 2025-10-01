@@ -10,7 +10,7 @@ const departamento = document.getElementById("Departamento");
 const municipio = document.getElementById("municipio");
 const direccion = document.getElementById("direccion");
 const c_requerimiento = document.getElementById("categoria_requerimiento");
-const equipos = document.getElementById("Equipos");
+const equipos = document.getElementById("EquiposSenalizacion");
 const serial = document.getElementById("serial");
 const detalle_requerimiento = document.getElementById("detalle_requerimiento");
 const tipo_cliente = document.getElementById("t_cliente");
@@ -212,6 +212,8 @@ function validaciones() {
 
 function ticketOnchange(sel) {
   divGarantia = document.getElementById("seccion_garantia");
+  const divEquipos = document.getElementById("divEquipos");
+  const divisionComercial = document.getElementById("division_comercial");
   let info = "<span>" + sel.value + ": </span>";
   descripcionCategoria = {
     Petición:
@@ -225,6 +227,12 @@ function ticketOnchange(sel) {
     Felicitación:
       "Comunicación positiva frente a los productos y/o servicios ofrecidos, también por la atención brindada por un colaborador.",
   };
+  if (sel.value == "Reclamo / Producto No Conforme" && divisionComercial.value == "Señalización" ) {
+    divEquipos.style.display = ""
+  } else {
+    divEquipos.style.display = "none"
+
+  }
   if (sel.value == "Reclamo / Producto No Conforme" || sel.value == "Queja") {
     divGarantia.style.display = "";
     info += descripcionCategoria["Reclamo"];
@@ -235,6 +243,18 @@ function ticketOnchange(sel) {
     document.getElementById("helpCategoria").innerHTML = info;
   }
   document.getElementsByClassName("helpCategoria")[0].style.display = "";
+}
+
+function divisionOnchange (sel) {
+  const divEquipos = document.getElementById("divEquipos");
+  const divCategoria = document.getElementById("categoria_requerimiento");
+  if (sel.value == "Señalización"  && divCategoria.value == "Reclamo / Producto No Conforme" ) {
+    divEquipos.style.display = ""
+  } else {
+    divEquipos.style.display = "none"
+
+  }
+
 }
 
 function equipoOnchange(seleccion) {

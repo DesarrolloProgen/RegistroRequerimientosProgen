@@ -143,6 +143,7 @@
             id="division_comercial"
             name="division_comercial"
             class="form-control"
+            onchange="divisionOnchange(this)"
           >
             <option disabled selected>Selecciona una opción</option>
           </select>
@@ -173,6 +174,19 @@
       <!-- Se muestra el siguiente div si selecciona la opcion reclamo producto no conforme -->
       <div id="seccion_garantia" style="display: none">
         <div class="row">
+          <div id="divEquipos" class="col-md-4 offset-md-1">
+            <label for="producto" class="control-label"
+              >Producto que genera el reclamo</label
+            >
+            <select
+              id="EquiposSenalizacion"
+              name="producto"
+              class="form-control"
+            >
+              <option disabled selected>Selecciona una opción</option>
+            </select>
+          </div>
+          
           <div class="col-md-8 offset-md-1">
             <label for="archivo" class="control-label"
               >Seleccione Archivo</label

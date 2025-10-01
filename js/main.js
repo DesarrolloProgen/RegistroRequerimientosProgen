@@ -34,7 +34,7 @@ window.addEventListener("load", function () {
         municipio: municipio.value,
         direccion: direccion.value,
         c_requerimiento: c_requerimiento.value,
-        equipos: "",
+        equipos: division_comercial.value == "Señalización" ? equipos.value  : "",
         serial: "",
         detalle: detalle_requerimiento.value,
         tipo_cliente: param_division_comercial == "Señalización" ?  "Cliente Actual" : tipo_cliente.value,
@@ -141,7 +141,8 @@ window.addEventListener("load", function () {
           "<option disabled selected>Selecciona una opción</option>";
         var listDivCom =
           "<option disabled selected>Selecciona una opción</option>";
-
+        var listSen =
+          "<option disabled selected>Selecciona una opción</option>";
         for (var i = 0; i < data.value.length; i++) {
           if (data.value[i].Identificacion != "") {
             listID +=
@@ -193,9 +194,20 @@ window.addEventListener("load", function () {
               "</option>";
           }
         }
+        for (var i = 0; i < data.value.length; i++) {
+          if (data.value[i].Senalizacion != "") {
+            listSen +=
+              "<option value='" +
+              data.value[i].Senalizacion +
+              "'>" +
+              data.value[i].Senalizacion +
+              "</option>";
+          }
+        }
         document.querySelector("#ID").innerHTML = listID;
         document.querySelector("#Departamento").innerHTML = listDep;
         document.querySelector("#categoria_requerimiento").innerHTML = listCat;
+        document.querySelector('#EquiposSenalizacion').innerHTML =listSen
         if (param_division_comercial) {
           if (param_division_comercial == "Instrumentación") {
             var lisTipoClienteIns =
