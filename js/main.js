@@ -38,6 +38,18 @@ window.addEventListener("load", function () {
         serial: "",
         detalle: detalle_requerimiento.value,
         tipo_cliente: param_division_comercial == "Señalización" ?  "Cliente Actual" : tipo_cliente.value,
+        cliente_final_nombre:
+          tipo_cliente.value === "Taller de Servicio Autorizado"
+            ? nombre_cliente_final.value
+            : "",
+        cliente_final_documento:
+          tipo_cliente.value === "Taller de Servicio Autorizado"
+            ? documento_cliente_final.value
+            : "",
+        cliente_final_correo:
+          tipo_cliente.value === "Taller de Servicio Autorizado"
+            ? correo_cliente_final.value
+            : "",
         fecha_compra: "",
         telefono: telefono.value,
         politica: politica.checked,
@@ -67,6 +79,18 @@ window.addEventListener("load", function () {
         detalle: detalle_requerimiento.value,
         telefono: telefono.value,
         tipo_cliente:  param_division_comercial == "Señalización" ?  "Cliente Actual" : tipo_cliente.value,
+        cliente_final_nombre:
+          tipo_cliente.value === "Taller de Servicio Autorizado"
+            ? nombre_cliente_final.value
+            : "",
+        cliente_final_documento:
+          tipo_cliente.value === "Taller de Servicio Autorizado"
+            ? documento_cliente_final.value
+            : "",
+        cliente_final_correo:
+          tipo_cliente.value === "Taller de Servicio Autorizado"
+            ? correo_cliente_final.value
+            : "",
         politica: politica.checked,
         archivo: "",
         punto_venta: "",
